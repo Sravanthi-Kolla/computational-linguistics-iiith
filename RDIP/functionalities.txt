@@ -1,0 +1,9 @@
+REQUIRED FUNCTIONALTIES FOR THIS TASK ARE :
+
+1)Need html to create buttons for objective,theory,experiment etc...
+2)A dropdown is required to select the prefered languages
+3)when the words are selected they will be dissappeared from that line  and will appear under the sentence formed area
+4)The Get Correct Sentence when clicked after displaying the right sentence becomes Hide the Correct Sentence wherein the correct sentence disappears.
+5)Whenever the button “check the correctness of sentence” is pressed, the Get Correct sentence button is invoked. 
+6)If the answer is wrong, we click on display answer we should display the answer you selected and the correct answer 
+7) if correct we should display CORRECR ANSWER!! else WRONG ANSWER!!
