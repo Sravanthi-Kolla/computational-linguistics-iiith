@@ -1,4 +1,4 @@
- var lan1=[["John ate an apple before afternoon","before afternoon John ate an apple","John before afternoon ate an apple"],
+var lan1=[["John ate an apple before afternoon","before afternoon John ate an apple","John before afternoon ate an apple"],
 ["some students like to study in the night","at night some students like to study"],
 ["John and Mary went to church","Mary and John went to church"],
 ["John went to church after eating","after eating John went to church","John after eating went to church"],
@@ -23,34 +23,38 @@ var allhin=["राम और श्याम बाजार गयें","र
 
 
 
-function goal2()
+function final()
 {
-	b=allhin[Math.floor(Math.random() * allhin.length)];
+     b=allhin[Math.floor(Math.random() * allhin.length)];
           b1=b.split(" ");
                 a=alleng[Math.floor(Math.random() * alleng.length)];
 a1=a.split(" ");
-	document.getElementById("fix3").innerHTML=""
+    document.getElementById("fix3").innerHTML=""
     document.getElementById("fix5").innerHTML=""
     document.getElementById("fix4").innerHTML=""
     document.getElementById("fix6").innerHTML=""
+    document.getElementById("fix7").innerHTML=""
+    document.getElementById("k5").innerHTML="Get Correct Sentence"
 
-	document.getElementById("k3").style.visibility="hidden";
+
+    document.getElementById("k3").style.visibility="hidden";
     document.getElementById('k4').style.visibility="hidden"
-document.getElementById("k5").style.visibility="hidden";
-
-	count=0
+    document.getElementById("k5").style.visibility="hidden";
+    count=0
+    
 
 if(document.getElementById("eng").selected)
 {
-document.getElementById("fix").innerHTML="Form a sentence(Declarative or Interrogative or any other type) from the given words"
+
+
+    document.getElementById("fix").innerHTML="Form a sentence(Declarative or Interrogative or any other type) from the given words"
     document.getElementById("fix1").innerHTML="(select the buttons in proper order)";
     
     let body = document.getElementsByTagName("p")[3];
     
     for(i=0;i<a1.length;i++)
-	
 {
-	j=Math.floor(Math.random()*a1.length)
+    j=Math.floor(Math.random()*a1.length)
     a2=a1[i];
     a1[i]=a1[j]
     a1[j]=a2;
@@ -59,45 +63,45 @@ document.getElementById("fix").innerHTML="Form a sentence(Declarative or Interro
 
 for(i=0;i<a1.length;i++)
 {
-		 let button = document.createElement("button");
+         let button = document.createElement("button");
          button.id='button'+i;
     
   button.innerHTML = a1[i]
   body.appendChild(button);
      
 button.addEventListener ("click", function() {
-document.getElementById("fix4").innerHTML="Formed Sentence<span style='font-style:italic;color:blue;font-weight:lighter'>(after selecting words):</span>";
+    document.getElementById("fix4").innerHTML="Formed Sentence<span style='font-style:italic;color:blue;font-weight:lighter'>(after selecting words):</span>";
     document.getElementById("fix5").innerHTML+=this.innerHTML+" ";
-    this.style.visibility="hidden";
+    this.style.display="none";
     count=count+1;
-   
-    if (count>0) 
+ 
+    if (count>0 ) 
      {
-     	document.getElementById("k3").style.visibility="visible";
+        document.getElementById("k3").style.visibility="visible";
      }
-   var v=String(document.getElementById("fix5").innerHTML).replace(/\s+$/, '');
+     var v=String(document.getElementById("fix5").innerHTML).replace(/\s+$/, '');
      v1=v.split(" ")
-
-
+  
+     
      if(a1.length==v1.length)
      {
-  document.getElementById("k4").style.visibility="visible";
+        document.getElementById("k4").style.visibility="visible";
      }
+
+
 });
 
 }
-
-   
 }
 else if (document.getElementById("hin").selected) 
 { 
-	document.getElementById("fix").innerHTML="Form a sentence(Declarative or Interrogative or any other type) from the given words"
+    document.getElementById("fix").innerHTML="Form a sentence(Declarative or Interrogative or any other type) from the given words"
     document.getElementById("fix1").innerHTML="(select the buttons in proper order)";
-
+    
     let body = document.getElementsByTagName("p")[3];
     for(i=0;i<b1.length;i++)
 {
-	j=Math.floor(Math.random()*b1.length)
+    j=Math.floor(Math.random()*b1.length)
     a2=b1[i];
     b1[i]=b1[j]
     b1[j]=a2;
@@ -105,26 +109,27 @@ else if (document.getElementById("hin").selected)
 }
 for(i=0;i<b1.length;i++)
 {
-		 let button = document.createElement("button");
+         let button = document.createElement("button");
          button.id='button'+i
   button.innerHTML = b1[i]
   body.appendChild(button)
 
 button.addEventListener ("click", function() {
-	document.getElementById("fix4").innerHTML="Formed Sentence<span style='font-style:italic;color:blue;font-weight:lighter'>(after selecting words):</span>";
+    document.getElementById("fix4").innerHTML="Formed Sentence<span style='font-style:italic;color:blue;font-weight:lighter'>(after selecting words):</span>";
     document.getElementById("fix5").innerHTML+=this.innerHTML+" ";
-    this.style.visibility="hidden";
+    this.style.display="none";
     count=count+1;
 
     if (count>0) 
      {
-     	document.getElementById("k3").style.visibility="visible";
+        document.getElementById("k3").style.visibility="visible";
      }
-   var v=String(document.getElementById("fix5").innerHTML).replace(/\s+$/, '');
+      var v=String(document.getElementById("fix5").innerHTML).replace(/\s+$/, '');
      v1=v.split(" ")
     if (b1.length==v1.length) 
      {
-     	document.getElementById("k4").style.visibility="visible";
+        document.getElementById("k4").style.visibility="visible";
+     
      }
 });
 
@@ -134,7 +139,7 @@ button.addEventListener ("click", function() {
 
 else
 {
-	document.getElementById("fix").innerHTML=""
+    document.getElementById("fix").innerHTML=""
     document.getElementById("fix1").innerHTML=""
     document.getElementById("fix3").innerHTML=""
 }
@@ -142,19 +147,21 @@ else
 function back()
 
 {
-for(i=0;i<a1.length||i<b1.length;i++)
+
+  for(i=0;i<a1.length||i<b1.length;i++)
   {
-    if(document.getElementById('button'+i).style.visibility=="hidden")
+    if(document.getElementById('button'+i).style.display=="none")
     {
-   document.getElementById('button'+i).style.visibility="visible";
+   document.getElementById('button'+i).style.display="inline";
     document.getElementById('fix4').innerHTML=""
     document.getElementById('fix5').innerHTML=""
     document.getElementById('fix6').innerHTML=""
+    document.getElementById("fix7").innerHTML=""
     document.getElementById('k3').style.visibility="hidden"
      document.getElementById('k4').style.visibility="hidden" 
       document.getElementById("k5").style.visibility="hidden";  
 }
-	}
+}
 }
     function find()
 {
@@ -171,7 +178,7 @@ for(i=0;i<a1.length||i<b1.length;i++)
 
       if(x==lan1[i][j])
       {
-
+           
         c++;
 
       }
@@ -186,7 +193,8 @@ if(c==1)
 else
 {
       document.getElementById("fix6").innerHTML="<span style='color:red;font-size:30px'>Wrong answer!!!</span>"
-document.getElementById("k5").style.visibility="visible";
+      document.getElementById("k5").style.visibility="visible";
+  
 }
 
 }
@@ -200,7 +208,7 @@ document.getElementById("k5").style.visibility="visible";
 
       if(x==lan2[i][j])
       {
-
+           
         p++;
 
       }
@@ -216,10 +224,76 @@ if(p==1)
 else
 {
       document.getElementById("fix6").innerHTML="<span style='color:red;font-size:30px'>Wrong answer!!!</span>"
-document.getElementById("k5").style.visibility="visible";
+        document.getElementById("k5").style.visibility="visible";
+  
 }
 
-	
+}
+}
 
+function toggle()
+{
+f=alleng.indexOf(a)
+s=lan1[f]
+g=allhin.indexOf(b)
+r=lan2[g]
+
+
+
+if(document.getElementById("eng").selected)
+  {
+    if(document.getElementById("k5").innerHTML=="Get Correct Sentence")
+    {
+       for(i=0;i<s.length;i++)
+  { 
+   document.getElementById("fix7").innerHTML+=s[i]+"<br>";
+   document.getElementById("k5").innerHTML="Hide the correct Sentence" 
+} 
+}
+else if(document.getElementById("k5").innerHTML=="Hide the correct Sentence")
+  {
+    
+   document.getElementById("fix7").innerHTML=""
+   document.getElementById("k5").innerHTML="Get Answers"
+}
+else if(document.getElementById("k5").innerHTML=="Get Answers")
+{
+
+       for(i=0;i<s.length;i++)
+  { 
+   document.getElementById("fix7").innerHTML+=s[i]+"<br>";
+   document.getElementById("k5").innerHTML="Hide the correct Sentence" 
+} 
+}
+}
+else if(document.getElementById("hin").selected)
+  { 
+
+    if(document.getElementById("k5").innerHTML=="Get Correct Sentence")
+    {
+       for(i=0;i<r.length;i++)
+  { 
+   document.getElementById("fix7").innerHTML+=r[i]+"<br>";
+   document.getElementById("k5").innerHTML="Hide the correct Sentence" 
+} 
+}
+else if(document.getElementById("k5").innerHTML=="Hide the correct Sentence")
+  {
+    
+   document.getElementById("fix7").innerHTML=""
+   document.getElementById("k5").innerHTML="Get Answers"
+}
+else if(document.getElementById("k5").innerHTML=="Get Answers")
+{
+
+  for(i=0;i<r.length;i++)
+
+  {
+   
+   document.getElementById("fix7").innerHTML+=r[i]+"<br>";
+   document.getElementById("k5").innerHTML="Hide the correct Sentence" 
+} 
+ 
+}
 }
 }
